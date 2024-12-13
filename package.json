@@ -1,0 +1,27 @@
+{
+  "name": "tslib",
+  "version": "1.0.0",
+  "module": "src/index.ts",
+  "main": "dist/index.umd.js",
+  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "tsup": "^8.3.5"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "build": "tsup ./src/index.ts --out-dir dist"
+  },
+  "dependencies": {
+    "esbuild-plugin-umd-wrapper": "^3.0.0"
+  }
+}
